@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+echo "-----&gt; Installing libsndfile 1.0.25"
+# change to the the BUILD_DIR ($1)
+cd $1
+# download the binary (-O) silently (-s)
+curl https://github.com/jayshreeanand/libsndfile-binary/master/libsndfile.tar.gz -s -O
+# make a directory to untar (like unzip) the binary
+mkdir -p vendor/libsndfile
+# untar the binary to the directory we want
+tar -C vendor/libsndfile -xvf libsndfile.tar.gz
